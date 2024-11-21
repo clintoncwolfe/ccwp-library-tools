@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ccwp"
+version = "0.1.0"
+description = "Archive support tools for CCWOLFEPHOTO"
+authors = ["Clinton Wolfe <clintoncwolfe@gmail.com>"]
+license = "Apache v2"
+readme = "../../README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+click = "^8.1.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+ccwp = "ccwp:cli" # Entry point to the CLI
