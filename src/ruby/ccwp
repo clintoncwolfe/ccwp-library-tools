@@ -1,0 +1,20 @@
+#!ruby
+
+require "thor"
+
+class CcwpLibraryCli < Thor
+
+  desc "list", "Lists Shoots"
+  def list
+    puts "In list"
+  end
+
+  desc "count SHOOTNUM", "Counts Images in a shoot"
+  option :bytes
+  def count(shootnum)
+    puts "In count"
+  end
+
+end
+
+CcwpLibraryCli.start(ARGV)
