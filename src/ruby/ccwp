@@ -1,28 +1,10 @@
 #!ruby
 
 require "thor"
-require "byebug"
+require_relative "lib/ccwp-libtools/list"
+require_relative "lib/ccwp-libtools/count"
 
 class CcwpLibraryCli < Thor
-
-  desc "list", "Lists Shoots"
-  def list(dir = ".")
-    # Look for Directories like sNxx/sNNx/sNNN-GG-Words
-    Dir.glob("#{dir}/s???/s???/s???-??-*").each do |shootdir|
-      matched = shootdir.match(/s\dxx\/s\d\dx\/s(\d\d\d)-(\w\w)-(.*)/)
-      if matched
-        (dummy, shootnum, genre, shootname) = *matched
-        puts "#{shootnum},#{genre},#{shootname}"
-      end
-    end
-  end
-
-  desc "count SHOOTNUM", "Counts Images in a shoot"
-  option :bytes
-  def count(shootnum)
-    puts "In count"
-  end
-
 end
 
 CcwpLibraryCli.start(ARGV)
