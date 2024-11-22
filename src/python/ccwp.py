@@ -1,3 +1,5 @@
+#!python
+
 import click
 import list
 import count
@@ -5,7 +7,7 @@ import count
 @click.group()
 
 def cli() -> None:
-  print("I'm working")
+  pass
 
 cli.add_command(list.list)
 cli.add_command(count.count)
